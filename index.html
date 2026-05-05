@@ -1,58 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roshan Gode | Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
-        }
-        header {
-            text-align: center;
-            padding: 50px;
-            background: linear-gradient(45deg, #1e3a8a, #2563eb);
-        }
-        section {
-            padding: 40px;
-            max-width: 900px;
-            margin: auto;
-        }
-        h2 {
-            color: #60a5fa;
-        }
-        .card {
-            background: #1e293b;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 10px;
-        }
-        a {
-            color: #38bdf8;
-            text-decoration: none;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roshan Gode | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #020617, #0f172a);
+    color: #e2e8f0;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+/* 🔥 NEW ANIMATION (SLIDE + GLOW) */
+.tagline {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #38bdf8;
+    animation: slideGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes slideGlow {
+    0% {
+        transform: translateY(0);
+        text-shadow: 0 0 5px #38bdf8;
+    }
+    100% {
+        transform: translateY(-10px);
+        text-shadow: 0 0 20px #38bdf8;
+    }
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #38bdf8;
+    color: black;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* SECTIONS */
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 20px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    color: #38bdf8;
+    margin-bottom: 20px;
+}
+
+/* CARDS */
+.card {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* SKILLS */
+.skills span {
+    display: inline-block;
+    background: #1e293b;
+    padding: 10px 15px;
+    margin: 6px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.skills span:hover {
+    background: #38bdf8;
+    color: black;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+}
+</style>
 </head>
+
 <body>
 
 <header>
     <h1>Roshan Ramesh Gode</h1>
-    <p>IoT | Embedded Systems | Robotics Engineer</p>
+
+    <!-- 🔥 Single Clean Focus Animation -->
+    <div class="tagline">
+        Robotics • Embedded Systems • IoT Engineer
+    </div>
+
+    <a href="resume.pdf" class="btn" download>Download Resume</a>
 </header>
 
 <section>
     <h2>About Me</h2>
-    <p>Electronics & Telecommunication student passionate about IoT, automation, and robotics. I build real-world systems like health monitoring, automation, and robotic control solutions.</p>
+    <div class="card">
+        Electronics & Telecommunication student with strong interest in Robotics, Embedded Systems, and IoT.
+        Experienced in building real-world automation systems including health monitoring, robotics, and smart safety solutions.
+    </div>
 </section>
 
 <section>
     <h2>Skills</h2>
+
     <div class="card">
-        Arduino, ESP32, Raspberry Pi, C, C++, Python, MQTT, Blynk, MATLAB
+        <strong>Embedded & Hardware:</strong><br><br>
+        <div class="skills">
+            <span>Arduino</span>
+            <span>Raspberry Pi</span>
+            <span>ESP32</span>
+            <span>UART</span>
+            <span>I2C</span>
+            <span>SPI</span>
+            <span>Sensor Integration</span>
+            <span>Radio Modules</span>
+        </div>
     </div>
+
+    <div class="card">
+        <strong>Software & Development:</strong><br><br>
+        <div class="skills">
+            <span>C</span>
+            <span>C++</span>
+            <span>Python</span>
+            <span>MySQL</span>
+            <span>MQTT</span>
+            <span>MATLAB</span>
+            <span>Arduino IDE</span>
+            <span>Canva</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <strong>IoT Platform:</strong><br><br>
+        <div class="skills">
+            <span>Blynk</span>
+        </div>
+    </div>
+
 </section>
 
 <section>
@@ -60,22 +186,22 @@
 
     <div class="card">
         <h3>Voice Controlled Pick & Place Robot</h3>
-        <p>Robotic arm controlled using voice commands with Raspberry Pi and Python.</p>
+        <p>Developed robotic arm controlled via voice using Raspberry Pi and Python for automation tasks.</p>
     </div>
 
     <div class="card">
-        <h3>Health Monitoring & Fall Detection</h3>
-        <p>IoT system using sensors and Blynk for real-time alerts.</p>
+        <h3>Elderly Health Monitoring & Fall Detection</h3>
+        <p>IoT system using sensors with real-time alerts via Blynk platform for safety monitoring.</p>
     </div>
 
     <div class="card">
-        <h3>Home Automation System</h3>
-        <p>Smart home system using Arduino and sensors for automation and security.</p>
+        <h3>Home Automation & Security System</h3>
+        <p>Arduino-based smart system for controlling appliances and enhancing home security.</p>
     </div>
 
     <div class="card">
-        <h3>Fire Alert System</h3>
-        <p>ESP8266-based system for real-time fire detection and alerts.</p>
+        <h3>IoT Fire Alert System</h3>
+        <p>ESP8266-based real-time fire detection system with instant alert notifications.</p>
     </div>
 
 </section>
@@ -83,15 +209,35 @@
 <section>
     <h2>Achievements</h2>
     <div class="card">
-        1st Place - ELECTROWIZ 2024 & 2025
+        🥇 1st Place – ELECTROWIZ National Level (2024)<br>
+        🥇 1st Place – ELECTROWIZ National Level (2025)
     </div>
 </section>
 
 <section>
     <h2>Contact</h2>
-    <p>Email: roshango744@gmail.com</p>
-    <p>Phone: 7447722585</p>
+    <div class="card">
+        Email: roshango744@gmail.com <br>
+        Phone: 7447722585
+    </div>
 </section>
+
+<footer>
+    <p>© 2026 Roshan Gode</p>
+</footer>
+
+<script>
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            sec.classList.add("show");
+        }
+    });
+});
+</script>
 
 </body>
 </html>
